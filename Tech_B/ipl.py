@@ -20,7 +20,12 @@ def extract_JSON(res):
 POINTS_TABLE_URL = 'https://ipl-stats-sports-mechanic.s3.ap-south-1.amazonaws.com/ipl/feeds/stats/107-groupstandings.js'
 MATCHES_URL = 'https://ipl-stats-sports-mechanic.s3.ap-south-1.amazonaws.com/ipl/feeds/107-matchschedule.js?MatchSchedule=_jqjsp&_1684078254800='
 
-pointsRes = requests.get(POINTS_TABLE_URL)
+try:
+    pointsRes = requests.get(POINTS_TABLE_URL)
+except:
+    print("Fetching data failed, try again.")
+    exit(1)
+
 points = extract_JSON(pointsRes)['points']
 
 points.sort(key=lambda team: int(team['OrderNo']))
@@ -39,7 +44,11 @@ teams = {int(team['TeamID']): {
     'performance': [],
 } for team in points}
 
-matchRes = requests.get(MATCHES_URL)
+try:
+    matchRes = requests.get(MATCHES_URL)
+except:
+    print("Fetching data failed, try again.")
+    exit(1)
 matchSummaries = extract_JSON(matchRes)['Matchsummary']
 
 matchSummaries.sort(key=lambda match: time.mktime(datetime.datetime.strptime(
@@ -80,4 +89,4 @@ for teamID, team in teams.items():
 
 df = pd.DataFrame(dfDict)
 
-df.to_csv(f"ipl_2023_point_table_{int(time.time())}.xlsx")
+df.to_csv(f"ipl_2023_point_table_{int(time.time())}.csv")
