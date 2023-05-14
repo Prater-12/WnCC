@@ -26,11 +26,11 @@ for elem in megaDiv.children:
         dfDict['id'].append(href.attrs['href'].split('/')[5][:-5])
         dfDict['image'].append(href.img.attrs['src'].split('/')[6])
 
-        groups = elem.attrs['data-groups'][2:-2].split('\',\'')
+        groups = elem.attrs['data-groups'][2:-2].split('\",\"')
 
         dfDict['group'].append(groups[0])
         dfDict['year'].append(int(groups[1]))
 
 
 df = pd.DataFrame(dfDict)
-df.to_csv('soc_projects.csv')
+df.to_csv('soc_projects.csv', index=False)

@@ -1,0 +1,11 @@
+id,name,code,logo,matches,wins,loss,tied,no_result,points,nrr,performance
+35,Gujarat Titans,GT,https://scores.iplt20.com/ipl/teamlogos/GT.png?v=1,12,8,4,0,0,16,0.761,"['L', 'W', 'W', 'L', 'W', 'W', 'W', 'L', 'W', 'L', 'W', 'W']"
+13,Chennai Super Kings,CSK,https://scores.iplt20.com/ipl/teamlogos/CSK.png,13,7,5,0,1,15,0.381,"['L', 'W', 'W', 'N', 'L', 'L', 'W', 'W', 'W', 'L', 'W', 'W', 'L']"
+17,Mumbai Indians,MI,https://scores.iplt20.com/ipl/teamlogos/MI.png,12,7,5,0,0,14,-0.117,"['W', 'W', 'L', 'W', 'W', 'L', 'L', 'W', 'W', 'W', 'L', 'L']"
+77,Lucknow Super Giants,LSG,https://feeds-100mb.s3-ap-southeast-1.amazonaws.com/teamLogos/ADAMetmKk61682948573LSG.png,12,6,5,0,1,13,0.309,"['W', 'L', 'N', 'L', 'W', 'L', 'W', 'L', 'W', 'W', 'L', 'W']"
+19,Royal Challengers Bangalore,RCB,https://scores.iplt20.com/ipl/teamlogos/RCB.png,12,6,6,0,0,12,0.166,"['W', 'L', 'L', 'W', 'L', 'W', 'W', 'L', 'W', 'L', 'L', 'W']"
+18,Rajasthan Royals,RR,https://scores.iplt20.com/ipl/teamlogos/RR.png,13,6,7,0,0,12,0.140,"['L', 'W', 'L', 'L', 'L', 'W', 'L', 'L', 'W', 'W', 'W', 'L', 'W']"
+16,Kolkata Knight Riders,KKR,https://scores.iplt20.com/ipl/teamlogos/KKR.png,13,6,7,0,0,12,-0.256,"['W', 'L', 'W', 'W', 'L', 'W', 'L', 'L', 'L', 'L', 'W', 'W', 'L']"
+15,Punjab Kings,PBKS,https://scores.iplt20.com/ipl/teamlogos/PBKS.png,12,6,6,0,0,12,-0.268,"['W', 'L', 'L', 'W', 'L', 'W', 'L', 'W', 'L', 'L', 'W', 'W']"
+20,Sunrisers Hyderabad,SRH,https://scores.iplt20.com/ipl/teamlogos/SRH.png,11,4,7,0,0,8,-0.471,"['L', 'W', 'L', 'W', 'L', 'L', 'L', 'W', 'W', 'L', 'L']"
+14,Delhi Capitals,DC,https://scores.iplt20.com/ipl/teamlogos/DC.png,12,4,8,0,0,8,-0.686,"['L', 'L', 'W', 'W', 'L', 'W', 'W', 'L', 'L', 'L', 'L', 'L']"

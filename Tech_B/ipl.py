@@ -52,7 +52,7 @@ except:
 matchSummaries = extract_JSON(matchRes)['Matchsummary']
 
 matchSummaries.sort(key=lambda match: time.mktime(datetime.datetime.strptime(
-    f"{match['GMTMatchDate']} {match['GMTMatchTime']}", "%Y-%m-%d %H:%M GMT").timetuple()), reverse=True)
+    f"{match['GMTMatchDate']} {match['GMTMatchTime']}", '%Y-%m-%d %H:%M GMT').timetuple()), reverse=True)
 
 for match in matchSummaries:
     if match['MatchStatus'] != 'Post':
@@ -62,19 +62,19 @@ for match in matchSummaries:
 
     if (match['WinningTeamID'] == ''):
         if (match['Commentss'] == 'No Result'):
-            teams[firstBat]["performance"].append('N')
-            teams[secondBat]["performance"].append('N')
+            teams[firstBat]['performance'].append('N')
+            teams[secondBat]['performance'].append('N')
         else:
-            teams[firstBat]["performance"].append('T')
-            teams[secondBat]["performance"].append('T')
+            teams[firstBat]['performance'].append('T')
+            teams[secondBat]['performance'].append('T')
     else:
         winningTeamID = int(match['WinningTeamID'])
         LosingTeamID = secondBat if firstBat == winningTeamID else firstBat
 
-        teams[winningTeamID]["performance"].append('W')
-        teams[LosingTeamID]["performance"].append('L')
+        teams[winningTeamID]['performance'].append('W')
+        teams[LosingTeamID]['performance'].append('L')
 
-dfDict = {"id": []}
+dfDict = {'id': []}
 
 first = True
 
@@ -91,4 +91,4 @@ for teamID, team in teams.items():
 df = pd.DataFrame(dfDict)
 
 df.to_csv(
-    f"ipl_2023_point_table_{datetime.datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.csv")
+    f"ipl_2023_point_table_{datetime.datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.csv", index=False)
