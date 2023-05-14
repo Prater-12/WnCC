@@ -52,7 +52,7 @@ except:
 matchSummaries = extract_JSON(matchRes)['Matchsummary']
 
 matchSummaries.sort(key=lambda match: time.mktime(datetime.datetime.strptime(
-    f"{match['GMTMatchDate']} {match['GMTMatchTime']}", "%Y-%m-%d %H:%M GMT").timetuple()))
+    f"{match['GMTMatchDate']} {match['GMTMatchTime']}", "%Y-%m-%d %H:%M GMT").timetuple()), reverse=True)
 
 for match in matchSummaries:
     if match['MatchStatus'] != 'Post':
@@ -80,6 +80,7 @@ first = True
 
 for teamID, team in teams.items():
     dfDict['id'].append(teamID)
+
     for key, value in team.items():
         if first:
             dfDict[key] = [value]
@@ -89,4 +90,5 @@ for teamID, team in teams.items():
 
 df = pd.DataFrame(dfDict)
 
-df.to_csv(f"ipl_2023_point_table_{int(time.time())}.csv")
+df.to_csv(
+    f"ipl_2023_point_table_{datetime.datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.csv")
